@@ -20,7 +20,7 @@ To run this application, ensure you have Python installed on your machine. This 
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/821125/MaxSum.git
+   git clone https://github.com/AndreasDorst/MaxSum.git
    cd MaxSum
    ```
 
@@ -98,3 +98,33 @@ Enter an integer (0 to stop): 0
 The number(s) with the maximum sum of digits (24) is/are: 789
 Would you like to continue? (yes/no): no
 ```
+
+## Tests
+
+The MaxSum application includes a suite of automated tests to ensure the correctness of its functionality. The tests are written using the `unittest` framework, which is part of the Python standard library.
+
+### Running the Tests
+
+To run the test suite, follow these steps:
+
+1. **Ensure you are in the project directory** where the `test_max_sum_digits.py` file is located.
+
+2. **Execute the following command** in your terminal:
+
+   ```bash
+   python -m unittest test_max_sum_digits.py
+   ```
+
+   This command will discover and run all the tests defined in the `test_max_sum_digits.py` file.
+
+### Test Structure
+
+The tests cover various aspects of the application, including:
+
+- **Sum of Digits Calculation**: Validating that the `sum_of_digits` function correctly computes the sum of digits for both positive and negative integers, as well as zero.
+
+- **Input Handling**: Testing the `get_numbers` function to ensure it correctly collects user input, including handling invalid inputs, managing the maximum number of inputs, and determining the maximum sum of digits.
+
+- **Multiple Inputs and Ties**: Checking scenarios where multiple numbers have the same maximum sum of digits to ensure they are all reported correctly.
+
+Running the test suite helps ensure that the MaxSum application behaves as expected. It is recommended to run the tests after making any changes to the codebase to catch potential regressions or bugs.

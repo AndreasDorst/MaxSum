@@ -27,7 +27,7 @@ def animated_print(text, delay=0.05):
         time.sleep(delay)   # Delay before printing the next character
     print()  # Move to the next line after the text is printed
 
-def get_numbers(max_numbers=None):
+def get_numbers(max_numbers=None, input_func=input):
     """Collect integers from the user and return them in a list."""
     max_sum = 0
     numbers_with_max_sum = []
@@ -39,17 +39,19 @@ def get_numbers(max_numbers=None):
                 animated_print("Maximum number of inputs reached.")
                 break
 
-            # Input prompt
-            num = int(input("Enter an integer (0 to stop): "))
+            # Input prompt using the input_func parameter
+            num = int(input_func("Enter an integer (0 to stop): "))
 
             if num == 0:
                 break
 
             current_sum = sum_of_digits(num)
 
+            # If the current sum is greater, reset the list
             if current_sum > max_sum:
                 max_sum = current_sum
                 numbers_with_max_sum = [num]  # Start a new list with this number
+            # If the current sum matches the max, append the number
             elif current_sum == max_sum:
                 numbers_with_max_sum.append(num)  # Add to the list if sum matches
 
